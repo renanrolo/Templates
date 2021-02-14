@@ -26,7 +26,7 @@ namespace Templates.Api.Filters
                 ProjectName = _configuration["ProjectName"],
                 Host = exceptionContext.HttpContext.Request?.Host?.Value,
                 HostSource = exceptionContext.HttpContext.Request?.Path,
-                CorrelationId = exceptionContext.HttpContext.Request.Headers["CorrelationId"]
+                CorrelationId = exceptionContext.HttpContext.Request?.Headers["CorrelationId"]
             };
 
             _logger.LogError(
