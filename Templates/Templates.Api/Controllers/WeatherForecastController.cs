@@ -9,6 +9,7 @@ namespace Templates.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Produces("application/json")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -34,6 +35,12 @@ namespace Templates.Api.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpPut]
+        public string Put()
+        {
+            throw new ApplicationException("YOU SHALL NOT PASS!!!");
         }
     }
 }

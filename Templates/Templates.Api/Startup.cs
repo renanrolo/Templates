@@ -6,12 +6,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Serilog;
+using Serilog.Sinks.SystemConsole.Themes;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Templates.Api.Extensions;
+using Templates.Api.Filters;
 
 namespace Templates.Api
 {
@@ -33,8 +36,18 @@ namespace Templates.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.Console(theme: AnsiConsoleTheme.Code)
+                .CreateLogger();
+
+            services.AddLogging();
+
             services.AddSwaggerGen()
-                    .AddControllers();
+                    .AddControllers( options =>
+                    {
+                        options.Filters.Add(typeof(NormalizeExceptionFilter));
+                        options.Filters.Add(typeof(LogExceptionFilter));
+                    });
 
             services.AddHealthChecks();
         }
