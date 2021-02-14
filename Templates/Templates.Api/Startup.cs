@@ -1,18 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Templates.Api.Extensions;
 using Templates.Api.Filters;
 
@@ -26,13 +19,12 @@ namespace Templates.Api
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: true)
+                .AddJsonFile("appsettings.json", optional: false)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
 
             _configuration = builder.Build();
         }
-
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -43,11 +35,11 @@ namespace Templates.Api
             services.AddLogging();
 
             services.AddSwaggerGen()
-                    .AddControllers( options =>
-                    {
-                        options.Filters.Add(typeof(NormalizeExceptionFilter));
-                        options.Filters.Add(typeof(LogExceptionFilter));
-                    });
+                    .AddControllers(options =>
+                   {
+                       options.Filters.Add(typeof(NormalizeExceptionFilter));
+                       options.Filters.Add(typeof(LogExceptionFilter));
+                   });
 
             services.AddHealthChecks();
         }

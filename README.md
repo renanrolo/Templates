@@ -11,4 +11,4 @@ May the force be with you!
 
 ## Waiting
 
-When I zip those templates I'll explain how to use then on Visual Studio o/
+Copy those zip files on 'Zips' folder to C:\Users\@user\Documents\Visual Studio 2019\Templates\ProjectTemplates and you're ready to go.
