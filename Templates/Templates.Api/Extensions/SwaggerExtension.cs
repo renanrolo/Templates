@@ -21,16 +21,6 @@ namespace Templates.Api.Extensions
                 : app;
         }
 
-        public static IServiceCollection AddSwaggerGen(this IServiceCollection services, IConfiguration configuration)
-        {
-            var useSwagger = configuration.GetValue("UseSwagger", false);
-            var projectName = configuration.GetValue("UseSwagger", "API");
-
-            return useSwagger
-                ? services.AddSwaggerGen(options => options.SwaggerDoc("v1", SwaggerInfo(projectName)))
-                : services;
-        }
-
         private static Action<SwaggerUIOptions> SwaggerUIConfig(string projectName) =>
             c => c.SwaggerEndpoint("/swagger/v1/swagger.json", projectName);
 
