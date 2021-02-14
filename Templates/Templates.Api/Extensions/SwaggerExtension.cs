@@ -14,7 +14,7 @@ namespace Templates.Api.Extensions
             IConfiguration configuration)
         {
             var useSwagger = configuration.GetValue("UseSwagger", false);
-            var projectName = configuration.GetValue("UseSwagger", "API");
+            var projectName = configuration.GetValue("ProjectName", "API");
 
             return useSwagger
                 ? app.UseSwagger().UseSwaggerUI(SwaggerUIConfig(projectName))
