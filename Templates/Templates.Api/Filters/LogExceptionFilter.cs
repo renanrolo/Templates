@@ -24,7 +24,7 @@ namespace Templates.Api.Filters
                 Message = exceptionContext.Exception.Message,
                 Date = DateTime.Now,
                 ProjectName = _configuration["ProjectName"],
-                Host = exceptionContext.HttpContext.Request?.Host?.Value,
+                Host = exceptionContext.HttpContext.Request?.Host.Value,
                 HostSource = exceptionContext.HttpContext.Request?.Path,
                 CorrelationId = exceptionContext.HttpContext.Request?.Headers["CorrelationId"]
             };
