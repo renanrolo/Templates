@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Templates.Api", "Templates.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Templates.IoC", "Templates.IoC\Templates.IoC.csproj", "{CFFB778B-F386-4F44-9799-DB5AF285B986}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templates.Worker", "Templates.Worker\Templates.Worker.csproj", "{A9CFF758-E837-4BC2-9AFC-5C1B772C4345}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Templates.Worker", "Templates.Worker\Templates.Worker.csproj", "{A9CFF758-E837-4BC2-9AFC-5C1B772C4345}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.Job", "Template.Job\Template.Job.csproj", "{07BA8E4D-5C92-41EB-844D-1B9A1145E707}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.Job", "Template.Job\Template.Job.csproj", "{07BA8E4D-5C92-41EB-844D-1B9A1145E707}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.Data.SqlClientWithDapper", "Template.Data.SqlClientWithDapper\Template.Data.SqlClientWithDapper.csproj", "{FFDB8745-39AD-41C5-9823-B258D43E9AED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{07BA8E4D-5C92-41EB-844D-1B9A1145E707}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07BA8E4D-5C92-41EB-844D-1B9A1145E707}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07BA8E4D-5C92-41EB-844D-1B9A1145E707}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFDB8745-39AD-41C5-9823-B258D43E9AED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFDB8745-39AD-41C5-9823-B258D43E9AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFDB8745-39AD-41C5-9823-B258D43E9AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFDB8745-39AD-41C5-9823-B258D43E9AED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
